@@ -20,7 +20,7 @@
                     </v-img>
                 </v-avatar>
             </v-col>
-            <v-col cols="9" class="ma-2" >
+            <v-col cols="10" >
                 <slot name="body"></slot>
 
             </v-col>
