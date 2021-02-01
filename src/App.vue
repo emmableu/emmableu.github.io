@@ -10,6 +10,11 @@
   a:link {
     text-decoration: none;
   }
+  p {
+    font-size: 14px;
+    font-weight: 300;
+    color:#212121
+  }
 
 
 </style>
