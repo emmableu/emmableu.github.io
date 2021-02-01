@@ -5,7 +5,7 @@
         <v-row
                 justify="center"
                 align="start"
-                class= "py-10"
+                class= "py-5"
                 style="background-color: #fafafa"
         >
             <v-col cols="3"

@@ -1,7 +1,7 @@
 <template>
   <info image-src="img/photo.jpg">
       <template  v-slot:body>
-        <p      style="font-size: 14px; font-weight: 300; color:#212121"
+        <p
         >
           My name is Wengran Wang (王翁然). I am a PhD student at the Department of Computer Science,
           <a href="https://www.ncsu.edu/">
