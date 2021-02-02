@@ -15,6 +15,23 @@
     font-weight: 300;
     color:#212121
   }
+  .small-title{
+    font-size: 15px;
+    font-weight: 300;
+  }
+  .small-subtitle{
+    font-size: 14px;
+    color:#212121
+
+  }
+  .small-cardbody{
+    font-size: 14px;
+    color:#212121;
+  }
+  span {
+    line-height:1 !important
+  }
+
 
 
 </style>
