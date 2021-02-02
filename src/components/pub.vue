@@ -1,5 +1,6 @@
 <template>
     <v-card
+            tile
             style="max-width: 45rem"
             >
         <v-divider/>
@@ -7,7 +8,7 @@
                 justify="center"
                 align="start"
                 class= "py-5"
-                style="background-color: #fafafa"
+                style="background-color: #fbfbfb"
         >
             <v-col cols="3"
             >
@@ -19,22 +20,29 @@
                     </v-img>
             </v-col>
             <v-col style="line-height: 23px" cols="9" >
-
-                   <a class="small-title" :href="pub.pdf">{{pub.TITLE}}</a><br>
-                    <span v-for="a in pub.AUTHOR"
-                          :key="a"
-                          class="small-subtitle" v-text="a + ', '"></span>
+                    <span class="small-title">
+                   <a v-if="pub.hasOwnProperty('pdf')" :href="pub.pdf">{{pub.TITLE}}</a>
+                    <span v-else> {{pub.TITLE}}</span>
+                        </span><br>
+                <template v-for=" (a, index) in pub.AUTHOR"
+                >
+                    <span :key="a"
+                            :class="{'b': a==='Wengran Wang',
+                          'small-subtitle': true}" v-text="a"></span>
+                    <span :key="a" v-if="index<pub.AUTHOR.length-1">, </span>
+                </template>
                     <br>
                     <span class="small-cardbody">{{pub.conferenceKey}}</span>
                     <i class="small-cardbody" v-if="pub.hasOwnProperty('rate')">({{pub.rate}})</i><br>
 
-                <span class="small-cardbody"> <a :href="pub.talk">talk</a> |
-                    <a :href="pub.slides">slides</a> |
-                    <a :href="pub.pdf">pdf</a> |
+                <span class="small-cardbody">
+                    <template   v-if="pub.hasOwnProperty('talk')" > <a :href="pub.talk">talk</a> | </template>
+                    <template   v-if="pub.hasOwnProperty('slides')" > <a :href="pub.slides">slides</a> | </template>
+                    <template   v-if="pub.hasOwnProperty('pdf')" > <a :href="pub.pdf">pdf</a> | </template>
                     <a :href=" 'pubs/bibs/' + pub.key + '.bib'">bib</a>
                 </span><br>
 
-                <v-row class="pt-1">
+                <v-row  v-if="pub.hasOwnProperty('abstractKey')" class="pt-1">
                     <v-col>
                     <span
                             class="small-cardbody"

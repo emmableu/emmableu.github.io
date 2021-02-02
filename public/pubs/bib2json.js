@@ -15,6 +15,7 @@ function parsedAuthors (authorList) {
 function GetSortOrder() {
     return function(a, b) {
         let year = parseFloat(a.YEAR) - parseFloat(b.YEAR);
+        console.log(a.key, b.key, year);
         if (year !== 0) {
             return year;
         }
@@ -45,13 +46,45 @@ for (let file of files){
     bibJSON.push(curJSON);
 }
 
-bibJSON.sort(GetSortOrder()).reverse();
+let yearList = new Set();
 
-console.log(bibJSON);
-fs.writeFile('../../src/components/json/pub_final.json', JSON.stringify(bibJSON), function(err){
+for (let jsonEntry of bibJSON){
+    if (jsonEntry.YEAR.split(", ")[1] !== "submitted")
+    {
+    yearList.add(jsonEntry.YEAR);
+    }
+}
+
+yearList = Array.from(yearList).sort().reverse();
+console.log(yearList);
+
+let jsonByYear = {}
+for (let year of yearList) {
+    jsonByYear[year] = []
+}
+for (let year in jsonByYear){
+    for (let bibEntry of bibJSON) {
+        if (bibEntry.YEAR === year) {
+            jsonByYear[bibEntry.YEAR].push(bibEntry);
+        }
+    }
+}
+
+let finalData = [];
+for (let yearName in jsonByYear){
+    let yearEntry = {};
+    yearEntry.year = yearName;
+    yearEntry.pubsInYear = jsonByYear[yearName].sort(GetSortOrder()).reverse();
+    finalData.push(yearEntry);
+}
+
+finalData = finalData.sort(GetSortOrder()).reverse();
+
+console.log(finalData);
+fs.writeFile('../../src/components/json/pub_final.json', JSON.stringify(finalData), function(err){
     if (err) throw err;
     console.log('saved');
 });
-
-
+//
+//
 

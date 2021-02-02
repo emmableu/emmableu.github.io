@@ -6,7 +6,7 @@
                 justify="center"
                 align="center"
                 class= "py-10"
-                style="background-color: #fafafa"
+                style="background-color: #fbfbfb"
         >
             <v-col cols="2"
             >

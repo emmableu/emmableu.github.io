@@ -2,7 +2,7 @@
   body{
     /*font-family: Lato,serif;*/
     font-weight: 300;
-    color: #212121;
+    color: #0e0e0e;
   }
   .b{
     font-weight: 400;
@@ -13,20 +13,20 @@
   p {
     font-size: 14px;
     font-weight: 300;
-    color:#212121
+    color:#0e0e0e
   }
   .small-title{
     font-size: 15px;
-    font-weight: 300;
+    font-weight: 400;
   }
   .small-subtitle{
     font-size: 13px;
-    color:#212121
+    color:#0e0e0e
 
   }
   .small-cardbody{
     font-size: 13px;
-    color:#212121;
+    color:#0e0e0e;
   }
   span {
     line-height:1 !important

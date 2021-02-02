@@ -1,7 +1,7 @@
 <template>
     <info image-src="img/violin.jpg">
         <template  v-slot:body>
-            <p  style="font-size: 14px; font-weight: 300; color:#212121">
+            <p  style="font-size: 14px; font-weight: 300; color:#0e0e0e">
                 I am interested in classical violin. I learned violin from Prof. Enxiao Chen (2000 - 2013)
                 in <a href = "http://english.zjcm.edu.cn/">Zhejiang Conservatory of Music</a> and Mr. Wenqiang Lu (2013 - 2016) from
                 <a href="http://www.zjso.org/yy/en/index.html">Zhejiang Symphony Orchestra</a>.
