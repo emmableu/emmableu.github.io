@@ -20,12 +20,12 @@
     font-weight: 300;
   }
   .small-subtitle{
-    font-size: 14px;
+    font-size: 13px;
     color:#212121
 
   }
   .small-cardbody{
-    font-size: 14px;
+    font-size: 13px;
     color:#212121;
   }
   span {

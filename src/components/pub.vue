@@ -30,7 +30,8 @@
 
                 <span class="small-cardbody"> <a :href="pub.talk">talk</a> |
                     <a :href="pub.slides">slides</a> |
-                    <a :href="pub.pdf">pdf</a>
+                    <a :href="pub.pdf">pdf</a> |
+                    <a :href=" 'pubs/bibs/' + pub.key + '.bib'">bib</a>
                 </span><br>
 
                 <v-row class="pt-1">
@@ -73,7 +74,8 @@
         name: "pub.vue",
         props: ["pub"],
         data: () => ({
-            show: false
+            show: false,
+            publicPath: process.env.BASE_URL
         }),
         methods: {
         }
