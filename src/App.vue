@@ -90,6 +90,6 @@ export default {
 
   data: () => ({
       tab: null
-  }),
+  })
 };
 </script>
