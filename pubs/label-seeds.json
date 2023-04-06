@@ -1,0 +1,10 @@
+[
+  {
+    "alias": "paperType",
+    "name": "select paper type"
+  },
+  {
+    "alias": "conferenceWithoutYear",
+    "name": "select conference/journal/workshop name"
+  }
+]
